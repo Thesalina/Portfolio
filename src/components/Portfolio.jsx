@@ -3,21 +3,21 @@ import { motion } from "framer-motion";
 const projects = [
   {
     title: "Project 1",
-    description: "A web application that allows users to create and manage tasks.",
-    image: "photo/8.jpg",
-    codeLink: "https://github.com/yourusername/project1",
+    description: "A digital clock.",
+    image: "photo/0.jpg",
+    codeLink: "https://github.com/Thesalina/Digital-clock",
   },
   {
     title: "Project 2",
     description: "A web app that tells weather of diffrent places.",
     image: "photo/9.jpg",
-    codeLink: "https://github.com/yourusername/project2",
+    codeLink: "https://github.com/Thesalina/Weather-app",
   },
   {
     title: "Project 3",
     description: "Mindfull – A Website for Better Mental Health .",
-    image: "/path/to/project3.jpg",
-    codeLink: "https://github.com/yourusername/project3",
+    image: "photo/8.jpg",
+    codeLink: "http://github.com/Thesalina/Mindfull",
   },
   // Add more projects as needed
 ];

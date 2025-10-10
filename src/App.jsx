@@ -4,6 +4,7 @@ import Services from "./components/Services";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Skills from "./components/Skills";
 
 const App = () => {
   return (
@@ -17,7 +18,10 @@ const App = () => {
       <section id="services">
         <Services />
       </section>
-
+      
+      <section id="skills">
+        <Skills />
+      </section>
       <section id="portfolio">
         <Portfolio />
       </section>
