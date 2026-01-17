@@ -1,112 +1,99 @@
-import "@fortawesome/fontawesome-free/css/all.min.css";
 import { motion } from "framer-motion";
+import { FaCode, FaProjectDiagram, FaLayerGroup, FaLaptopCode, FaServer, FaDatabase, FaCloud, FaBug, FaTerminal, FaCogs, FaUsers, FaLightbulb } from "react-icons/fa";
+import Card from "./ui/Card";
 
-// Move services data outside of the component to avoid re-defining it every render
 const services = [
   {
-    icon: "fas fa-code",
+    icon: FaCode,
     title: "Programming Languages",
     description: "Strong foundation in languages like Python, JavaScript, Java, and C# for building versatile software solutions.",
   },
   {
-    icon: "fas fa-project-diagram",
+    icon: FaProjectDiagram,
     title: "Data Structures & Algorithms",
     description: "Skilled in solving complex problems using efficient data structures and algorithms.",
   },
   {
-    icon: "fas fa-layer-group",
+    icon: FaLayerGroup,
     title: "Version Control",
     description: "Experienced with Git and GitHub for code versioning, collaboration, and source control.",
   },
   {
-    icon: "fas fa-laptop-code",
+    icon: FaLaptopCode,
     title: "Web Development",
     description: "Proficient in building responsive front-end interfaces and robust back-end services using modern frameworks.",
   },
   {
-    icon: "fas fa-server",
+    icon: FaServer,
     title: "API Development",
     description: "Able to design, build, and integrate RESTful and GraphQL APIs for scalable applications.",
   },
   {
-    icon: "fas fa-database",
+    icon: FaDatabase,
     title: "Database Management",
     description: "Knowledgeable in both SQL (MySQL, PostgreSQL) and NoSQL (MongoDB, Firebase) databases.",
   },
   {
-    icon: "fas fa-cloud",
+    icon: FaCloud,
     title: "Cloud Solutions",
     description: "Deploy and manage applications using cloud services like AWS, GCP, and Azure.",
   },
   {
-    icon: "fas fa-bug",
+    icon: FaBug,
     title: "Testing & Debugging",
     description: "Utilize tools and methodologies for unit testing, integration testing, and debugging to ensure code quality.",
   },
   {
-    icon: "fas fa-terminal",
+    icon: FaTerminal,
     title: "Command Line Tools",
     description: "Comfortable using the command line for development tasks, scripting, and automation.",
   },
   {
-    icon: "fas fa-cogs",
+    icon: FaCogs,
     title: "DevOps & CI/CD",
     description: "Understand CI/CD pipelines, containerization with Docker, and basic Kubernetes operations.",
   },
   {
-    icon: "fas fa-users",
+    icon: FaUsers,
     title: "Collaboration & Agile",
     description: "Experienced working in agile teams with tools like Jira, Trello, and Slack for effective communication.",
   },
   {
-    icon: "fas fa-lightbulb",
+    icon: FaLightbulb,
     title: "Problem-Solving",
     description: "Creative thinker with a passion for solving real-world problems through code and technology.",
   },
-  
 ];
 
 const Services = () => {
   return (
-    <section id="services" className="py-16 bg-black text-pink-400 relative">
-      {/* Animated Background Effects */}
-      <motion.div
-        className="absolute top-10 left-10 w-32 h-32 bg-pink-400 rounded-full blur-3xl opacity-30"
-        animate={{ scale: [1, 1.2, 1] }}
-        transition={{ duration: 3, repeat: Infinity }}
-      ></motion.div>
-      <motion.div
-        className="absolute bottom-10 right-10 w-32 h-32 bg-pink-400 rounded-full blur-3xl opacity-30"
-        animate={{ scale: [1, 1.2, 1] }}
-        transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-      ></motion.div>
-
-      <div className="container mx-auto px-6 md:px-12">
-        {/* Heading */}
-        <h2 className="text-4xl font-extrabold text-center text-pink-400 mb-12">
-          My Services
-        </h2>
+    <section id="services" className="py-20 bg-slate-900 relative">
+      <div className="container mx-auto px-6 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl font-bold mb-4">
+            My <span className="text-gradient">Services</span>
+          </h2>
+          <p className="text-slate-400 max-w-xl mx-auto">
+            Comprehensive technical solutions for your digital needs.
+          </p>
+        </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Service Items */}
           {services.map((service, index) => (
-            <motion.div
-              key={index}
-              className="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 hover:shadow-xl transition-all duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-            >
-              <div className="text-4xl text-pink-400 mb-4">
-                <i className={service.icon} aria-hidden="true"></i>
+            <Card key={index} className="group hover:bg-white/5 transition-colors duration-300">
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500/20 to-purple-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <service.icon className="text-2xl text-pink-400 group-hover:text-purple-400 transition-colors" />
               </div>
-              <h3 className="text-2xl font-semibold text-pink-400 mb-4">
-                {service.title}
-              </h3>
-              <p className="text-lg text-gray-800 leading-relaxed">
+              <h3 className="text-xl font-bold text-white mb-4">{service.title}</h3>
+              <p className="text-slate-400 text-sm leading-relaxed mb-4">
                 {service.description}
               </p>
-            </motion.div>
+            </Card>
           ))}
         </div>
       </div>
