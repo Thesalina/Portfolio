@@ -7,7 +7,8 @@ const Contact = () => {
     email: "",
     message: "",
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState({ type: "", text: "" });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -16,23 +17,32 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setStatus({ type: "", text: "" });
 
-    // Simulate form submission process
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
+    try {
+      const res = await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-    // Clear form after submission
-    setTimeout(() => {
-      setSubmitted(false);
+      if (!res.ok) throw new Error("Failed to send");
+
+      setStatus({ type: "success", text: "Message sent successfully! I will get back to you soon." });
       setFormData({ name: "", email: "", message: "" });
-    }, 3000);
+    } catch {
+      setStatus({ type: "error", text: "Something went wrong. Please try again or email me directly." });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     
-    <section id="contact" className="relative min-h-screen bg-black text-white py-16">
+    <section id="contact" className="relative min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white py-16">
       {/* Background Decorations */}
       <div className="absolute top-10 left-10 w-48 h-48 bg-pink-400 rounded-full blur-3xl opacity-40"></div>
       <div className="absolute bottom-10 right-10 w-32 h-32 bg-pink-400 rounded-full blur-3xl opacity-40"></div>
@@ -57,16 +67,16 @@ const Contact = () => {
             transition={{ duration: 1 }}
           >
             <h3 className="text-2xl font-semibold text-pink-400 mb-4">Contact Info</h3>
-            <p className="text-lg text-gray-300 mb-4">
+            <p className="text-lg text-gray-600 dark:text-gray-300 mb-4">
               Feel free to reach out through any of the following channels:
             </p>
-            <div className="text-lg text-gray-300 mb-2">
+            <div className="text-lg text-gray-600 dark:text-gray-300 mb-2">
               📧 <span>Email: <a href="mailto:example@example.com" className="text-pink-500">gotamesalina6@gmail.com</a></span>
             </div>
-            <div className="text-lg text-gray-300 mb-2">
+            <div className="text-lg text-gray-600 dark:text-gray-300 mb-2">
               📞 <span>Phone: +977 <a href="tel:+1234567890" className="text-pink-500">9809878769</a></span>
             </div>
-            <div className="text-lg text-gray-300">
+            <div className="text-lg text-gray-600 dark:text-gray-300">
               📍 <span>Location: Ghorahi Dang Nepal</span>
             </div>
           </motion.div>
@@ -78,7 +88,7 @@ const Contact = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
           >
-            <form onSubmit={handleSubmit} className="bg-gray-900 p-8 rounded-lg shadow-lg">
+            <form onSubmit={handleSubmit} className="bg-gray-100 dark:bg-gray-900 p-8 rounded-lg shadow-lg">
               <div className="mb-6">
                 <label htmlFor="name" className="block text-lg font-medium text-pink-400 mb-2">
                   Name
@@ -89,7 +99,7 @@ const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full p-3 border black-text  border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400"
+                  className="w-full p-3 border text-gray-900 dark:text-white border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400"
                   placeholder="Your Name"
                   required
                 />
@@ -105,7 +115,7 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full p-3 border text-black border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400"
+                  className="w-full p-3 border text-gray-900 dark:text-white border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400"
                   placeholder="Your Email"
                   required
                 />
@@ -120,7 +130,7 @@ const Contact = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full p-3 border  text-black border-gray-300 text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400"
+                  className="w-full p-3 border text-gray-900 dark:text-white border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400"
                   placeholder="Your Message"
                   rows="6"
                   required
@@ -130,20 +140,24 @@ const Contact = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full py-3 bg-pink-500 text-white font-semibold rounded-lg hover:bg-pink-600 transition-colors duration-300"
+                disabled={loading}
+                className="w-full py-3 bg-pink-500 text-white font-semibold rounded-lg hover:bg-pink-600 disabled:opacity-50 transition-colors duration-300"
               >
-                Send Message
+                {loading ? "Sending..." : "Send Message"}
               </button>
 
-              {/* Success Message */}
-              {submitted && (
+              {/* Status Message */}
+              {status.text && (
                 <motion.p
-                  className="mt-4 text-center text-lg font-semibold text-green-500"
+                  className={`mt-4 text-center text-lg font-semibold ${
+                    status.type === "success" ? "text-green-500" : "text-red-500"
+                  }`}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5 }}
                 >
-                  ✅ Message sent successfully!
+                  {status.type === "success" ? "✓ " : "✗ "}
+                  {status.text}
                 </motion.p>
               )}
             </form>

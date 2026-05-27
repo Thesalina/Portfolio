@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 const Footer = () => {
   return (
     <motion.footer
-      className="bg-black text-pink-400 py-6 text-center flex flex-col items-center justify-center"
+      className="bg-gray-100 dark:bg-black text-pink-400 py-6 text-center flex flex-col items-center justify-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <p className="text-lg font-medium">© 2024 SALINA. All rights reserved.</p>
+      <p className="text-lg font-medium">© 2026 SALINA. All rights reserved.</p>
 
       {/* Social Media Links */}
       <div className="flex space-x-6 mt-4">

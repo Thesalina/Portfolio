@@ -7,7 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 // Middleware
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(cors({ origin: ["http://localhost:3000", "http://localhost:5173"], credentials: true }));
 app.use(express.json());
 
 // Nodemailer setup
@@ -40,7 +40,7 @@ app.post("/send", async (req, res) => {
     try {
         let info = await transporter.sendMail({
             from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
-            to: process.env.EMAIL_USER, // Change this to your email
+            to: process.env.EMAIL_USER,
             subject: `New Message from ${name}`,
             text: `Email: ${email}\n\nMessage:\n${message}`,
         });

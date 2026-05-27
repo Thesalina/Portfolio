@@ -1,14 +1,15 @@
 import { motion } from "framer-motion";
+import myPhoto from "../assets/photo/me.jpeg";
 
 const About = () => {
   return (
     <section
       id="about"
-      className="relative h-screen bg-black text-white py-16 flex items-center justify-center"
+      className="relative h-screen bg-white dark:bg-black text-gray-900 dark:text-white py-16 flex items-center justify-center"
     >
       {/* Animated Decorative Background Effect */}
       <motion.div
-        className="absolute top-10 left-10 w-48 h-48  bg-pink-500 bg-pink-400 rounded-full blur-3xl opacity-40"
+        className="absolute top-10 left-10 w-48 h-48 bg-pink-400 rounded-full blur-3xl opacity-40"
         animate={{ scale: [1, 1.2, 1] }}
         transition={{ duration: 3, repeat: Infinity }}
       ></motion.div>
@@ -32,31 +33,26 @@ const About = () => {
         <div className="flex flex-col md:flex-row items-center  justify-center gap-6 md:gap-12">
           {/* About Text */}
           <motion.div
-            className="max-w-xl text-center md:text-left bg-white  p-6 rounded-lg shadow-lg"
+            className="max-w-xl text-center md:text-left bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
           >
             <motion.p
-              className="text-lg text-black mb-4"
+              className="text-lg text-gray-700 dark:text-gray-300 mb-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6 }}
             >
-              I am a passionate developer with expertise in creating visually
-              appealing and user-friendly web interfaces. With a keen eye for
-              design and attention to detail, I strive to build websites that
-              leave a lasting impression.
+              I am from Ghorahi, Dang — a small city in Nepal. I recently graduated with a degree in Computer Engineering from NAST. I first got into coding because I was curious about how websites and apps actually work, and that curiosity turned into a genuine passion. Over time, I have learned to build things from scratch, fix bugs that made me want to pull my hair out, and ship projects that people actually use.
             </motion.p>
             <motion.p
-              className="text-lg text-black"
+              className="text-lg text-gray-700 dark:text-gray-300"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              I have experience with various front-end technologies like HTML,
-              CSS, JavaScript, React, and Node.js, and I’m always eager to learn
-              and improve my skills.
+              Last summer, I completed a remote internship at Digital Pathshala, where I worked on Mindfull — a mental health wellness platform. I built the frontend with React and the backend with Express.js, which was my first real taste of building something end-to-end. For my final-year project, I built a Payroll Management System using React and Spring Boot. I am currently looking for an internship where I can learn from real engineers, contribute to something meaningful, and keep growing as a developer.
             </motion.p>
           </motion.div>
 
@@ -68,7 +64,7 @@ const About = () => {
             transition={{ duration: 1, delay: 0.2 }}
           >
             <img
-              src="https://as1.ftcdn.net/v2/jpg/08/33/84/98/1000_F_833849841_s9ikrcxCtGcEzMtVCp4cFpnUKhMJRkWK.jpg"
+              src={myPhoto}
               alt="SALINA"
               className="w-full h-full object-cover"
             />

@@ -4,71 +4,35 @@ import { motion } from "framer-motion";
 // Move services data outside of the component to avoid re-defining it every render
 const services = [
   {
-    icon: "fas fa-code",
-    title: "Programming Languages",
-    description: "Strong foundation in languages like Python, JavaScript, Java, and C# for building versatile software solutions.",
-  },
-  {
-    icon: "fas fa-project-diagram",
-    title: "Data Structures & Algorithms",
-    description: "Skilled in solving complex problems using efficient data structures and algorithms.",
-  },
-  {
-    icon: "fas fa-layer-group",
-    title: "Version Control",
-    description: "Experienced with Git and GitHub for code versioning, collaboration, and source control.",
-  },
-  {
     icon: "fas fa-laptop-code",
     title: "Web Development",
-    description: "Proficient in building responsive front-end interfaces and robust back-end services using modern frameworks.",
+    description: "I build responsive websites and web apps using React, Tailwind CSS, and Node.js. From landing pages to full platforms, I focus on making things that look good and work well.",
   },
   {
     icon: "fas fa-server",
-    title: "API Development",
-    description: "Able to design, build, and integrate RESTful and GraphQL APIs for scalable applications.",
+    title: "Backend & APIs",
+    description: "I design and build RESTful APIs using Express.js and Spring Boot. I have worked on user authentication, session management, and connecting frontends to databases.",
   },
   {
     icon: "fas fa-database",
-    title: "Database Management",
-    description: "Knowledgeable in both SQL (MySQL, PostgreSQL) and NoSQL (MongoDB, Firebase) databases.",
+    title: "Databases",
+    description: "I work with MySQL and MongoDB for storing and managing data. Whether it is designing schemas or writing queries, I try to keep things organized and efficient.",
   },
   {
-    icon: "fas fa-cloud",
-    title: "Cloud Solutions",
-    description: "Deploy and manage applications using cloud services like AWS, GCP, and Azure.",
+    icon: "fas fa-code",
+    title: "Languages I Use",
+    description: "JavaScript is my go-to, but I also write Java, Python, and a bit of TypeScript. I pick whatever makes sense for the project I am working on.",
   },
   {
-    icon: "fas fa-bug",
-    title: "Testing & Debugging",
-    description: "Utilize tools and methodologies for unit testing, integration testing, and debugging to ensure code quality.",
+    icon: "fas fa-mobile-alt",
+    title: "Frontend Focus",
+    description: "I build user interfaces with React and make them responsive with Tailwind CSS. I care about how a page feels, not just how it looks.",
   },
-  {
-    icon: "fas fa-terminal",
-    title: "Command Line Tools",
-    description: "Comfortable using the command line for development tasks, scripting, and automation.",
-  },
-  {
-    icon: "fas fa-cogs",
-    title: "DevOps & CI/CD",
-    description: "Understand CI/CD pipelines, containerization with Docker, and basic Kubernetes operations.",
-  },
-  {
-    icon: "fas fa-users",
-    title: "Collaboration & Agile",
-    description: "Experienced working in agile teams with tools like Jira, Trello, and Slack for effective communication.",
-  },
-  {
-    icon: "fas fa-lightbulb",
-    title: "Problem-Solving",
-    description: "Creative thinker with a passion for solving real-world problems through code and technology.",
-  },
-  
 ];
 
 const Services = () => {
   return (
-    <section id="services" className="py-16 bg-black text-pink-400 relative">
+    <section id="services" className="py-16 bg-gray-50 dark:bg-black text-pink-400 relative">
       {/* Animated Background Effects */}
       <motion.div
         className="absolute top-10 left-10 w-32 h-32 bg-pink-400 rounded-full blur-3xl opacity-30"
@@ -84,7 +48,7 @@ const Services = () => {
       <div className="container mx-auto px-6 md:px-12">
         {/* Heading */}
         <h2 className="text-4xl font-extrabold text-center text-pink-400 mb-12">
-          My Services
+          What I Do
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -92,7 +56,7 @@ const Services = () => {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 hover:shadow-xl transition-all duration-300"
+              className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg transform hover:scale-105 hover:shadow-xl transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
@@ -103,7 +67,7 @@ const Services = () => {
               <h3 className="text-2xl font-semibold text-pink-400 mb-4">
                 {service.title}
               </h3>
-              <p className="text-lg text-gray-800 leading-relaxed">
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                 {service.description}
               </p>
             </motion.div>

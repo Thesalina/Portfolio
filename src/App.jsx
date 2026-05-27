@@ -5,6 +5,7 @@ import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Skills from "./components/Skills";
+import About from "./components/About";
 
 const App = () => {
   return (
@@ -13,6 +14,10 @@ const App = () => {
 
       <section id="home">
         <HeroSection />
+      </section>
+
+      <section id="about">
+        <About />
       </section>
 
       <section id="services">

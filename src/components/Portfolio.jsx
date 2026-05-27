@@ -1,30 +1,40 @@
 import { motion } from "framer-motion";
+import payrollImg from "../assets/photo/payroll.png";
+import sudurpaschimImg from "../assets/photo/sudurpaschim.png";
+import billsplitterImg from "../assets/photo/billspliter.png";
 
 const projects = [
   {
-    title: "Project 1",
-    description: "A digital clock.",
-    image: "photo/0.jpg",
-    codeLink: "https://github.com/Thesalina/Digital-clock",
+    title: "Mindfull",
+    description: "A mental health wellness platform built during my internship at Digital Pathshala — React.js frontend, Express.js backend, RESTful APIs for user sessions and content management.",
+    image: payrollImg,
+    codeLink: "https://github.com/Thesalina/Mindfull",
+    liveLink: "https://mindfull-kappa.vercel.app",
   },
   {
-    title: "Project 2",
-    description: "A web app that tells weather of diffrent places.",
-    image: "photo/9.jpg",
-    codeLink: "https://github.com/Thesalina/Weather-app",
+    title: "Payroll Management System",
+    description: "Final-year project automating salary computation, attendance tracking, and employee management workflows — built with React and Spring Boot.",
+    image: payrollImg,
+    codeLink: "https://github.com/Thesalina/ProjectPayrollSystem",
   },
   {
-    title: "Project 3",
-    description: "Mindfull – A Website for Better Mental Health .",
-    image: "photo/8.jpg",
-    codeLink: "http://github.com/Thesalina/Mindfull",
+    title: "Sudurpaschim",
+    description: "A web application showcasing services and information for the Sudurpaschim region.",
+    image: sudurpaschimImg,
+    codeLink: "https://github.com/Thesalina/Sudurpaschim",
+    liveLink: "https://sudurpaschim.vercel.app",
   },
-  // Add more projects as needed
+  {
+    title: "Bill Splitter",
+    description: "An app to split bills and track shared expenses easily.",
+    image: billsplitterImg,
+    codeLink: "https://github.com/Thesalina/Bill-splitter",
+  },
 ];
 
    const Projects = () => {
   return (
-    <section id="projects" className="py-16 bg-gray-800 text-pink-400">
+    <section id="projects" className="py-16 bg-gray-100 dark:bg-gray-800 text-pink-400">
       <div className="container mx-auto px-6">
         <motion.h2
           className="text-4xl font-extrabold text-center text-pink-400 mb-12"
@@ -39,7 +49,7 @@ const projects = [
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-lg overflow-hidden shadow-xl transform hover:scale-105 hover:shadow-2xl transition-all duration-300"
+              className="bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-xl transform hover:scale-105 hover:shadow-2xl transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
@@ -62,15 +72,27 @@ const projects = [
               {/* Project Details */}
               <div className="p-6">
                 <h3 className="text-2xl font-semibold text-pink-400 mb-2">{project.title}</h3>
-                <p className="text-lg text-pink-400 mb-4">{project.description}</p>
-                <a
-                  href={project.codeLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-pink-400 hover:text-pink-600 transition-all duration-300"
-                >
-                 View Source Code
-                </a>
+                <p className="text-lg text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
+                <div className="flex gap-4">
+                  <a
+                    href={project.codeLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-pink-400 hover:text-pink-600 transition-all duration-300"
+                  >
+                    View Source Code
+                  </a>
+                  {project.liveLink && (
+                    <a
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-pink-400 hover:text-pink-600 transition-all duration-300 font-semibold"
+                    >
+                      Live Demo
+                    </a>
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}

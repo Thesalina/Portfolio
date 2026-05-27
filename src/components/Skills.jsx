@@ -1,127 +1,36 @@
+const skills = [
+  { name: "React", icon: "fab fa-react" },
+  { name: "JavaScript", icon: "fab fa-js" },
+  { name: "Java", icon: "fab fa-java" },
+  { name: "Spring Boot", icon: "fas fa-leaf" },
+  { name: "Node.js", icon: "fab fa-node" },
+  { name: "Express.js", icon: "fas fa-server" },
+  { name: "MySQL", icon: "fas fa-database" },
+  { name: "MongoDB", icon: "fas fa-database" },
+  { name: "Tailwind CSS", icon: "fab fa-css3" },
+  { name: "HTML & CSS", icon: "fab fa-html5" },
+  { name: "Git & GitHub", icon: "fab fa-git-alt" },
+  { name: "Python", icon: "fab fa-python" },
+];
+
 const Skills = () => {
   return (
-    <section id="skills" className="bg-black text-white relative h-auto py-16">
+    <section id="skills" className="bg-white dark:bg-black text-gray-900 dark:text-white relative h-auto py-16">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-8 text-pink-400">Skills</h2>
+        <h2 className="text-3xl font-bold text-center mb-12 text-pink-400">Skills & Tools</h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          
-          {/* Skill 1: HTML */}
-          <div className="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-all duration-300">
-            <div className="text-4xl text-pink-400 mb-4">
-              <i className="fab fa-html5"></i>
-            </div>
-            <h3 className="text-xl font-semibold text-gray-800">HTML</h3>
-            <div className="mt-4">
-              <div className="w-full bg-gray-200 rounded-full h-2.5">
-                <div className="bg-pink-400 h-2.5 rounded-full" style={{ width: '90%' }}></div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          {skills.map((skill, index) => (
+            <div
+              key={index}
+              className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow-md text-center transform hover:scale-105 transition-all duration-300 border border-gray-100 dark:border-gray-700"
+            >
+              <div className="text-3xl text-pink-400 mb-3">
+                <i className={skill.icon}></i>
               </div>
+              <h3 className="text-sm font-semibold text-gray-800 dark:text-gray-200">{skill.name}</h3>
             </div>
-          </div>
-
-          {/* Skill 2: CSS */}
-          <div className="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-all duration-300">
-            <div className="text-4xl text-pink-400 mb-4">
-              <i className="fab fa-css3-alt"></i>
-            </div>
-            <h3 className="text-xl font-semibold text-gray-800">CSS</h3>
-            <div className="mt-4">
-              <div className="w-full bg-gray-200 rounded-full h-2.5">
-                <div className="bg-pink-400 h-2.5 rounded-full" style={{ width: '85%' }}></div>
-              </div>
-            </div>
-          </div>
-
-          {/* Skill 3: JavaScript */}
-          <div className="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-all duration-300">
-            <div className="text-4xl text-pink-400 mb-4">
-              <i className="fab fa-js"></i>
-            </div>
-            <h3 className="text-xl font-semibold text-gray-800">JavaScript</h3>
-            <div className="mt-4">
-              <div className="w-full bg-gray-200 rounded-full h-2.5">
-                <div className="bg-pink-400 h-2.5 rounded-full" style={{ width: '80%' }}></div>
-              </div>
-            </div>
-          </div>
-
-          {/* Skill 4: React */}
-          <div className="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-all duration-300">
-            <div className="text-4xl text-pink-400 mb-4">
-              <i className="fab fa-react"></i>
-            </div>
-            <h3 className="text-xl font-semibold text-gray-800">React</h3>
-            <div className="mt-4">
-              <div className="w-full bg-gray-200 rounded-full h-2.5">
-                <div className="bg-pink-400 h-2.5 rounded-full" style={{ width: '75%' }}></div>
-              </div>
-            </div>
-          </div>
-
-          {/* Skill 5: Node.js */}
-          <div className="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-all duration-300">
-            <div className="text-4xl text-pink-400 mb-4">
-              <i className="fab fa-node"></i>
-            </div>
-            <h3 className="text-xl font-semibold text-gray-800">Node.js</h3>
-            <div className="mt-4">
-              <div className="w-full bg-gray-200 rounded-full h-2.5">
-                <div className="bg-pink-400 h-2.5 rounded-full" style={{ width: '70%' }}></div>
-              </div>
-            </div>
-          </div>
-
-          {/* Skill 6: Git */}
-          <div className="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-all duration-300">
-            <div className="text-4xl text-pink-400 mb-4">
-              <i className="fab fa-git-alt"></i>
-            </div>
-            <h3 className="text-xl font-semibold text-gray-800">Git</h3>
-            <div className="mt-4">
-              <div className="w-full bg-gray-200 rounded-full h-2.5">
-                <div className="bg-pink-400 h-2.5 rounded-full" style={{ width: '65%' }}></div>
-              </div>
-            </div>
-          </div>
-
-          {/* Skill 7: Java */}
-          <div className="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-all duration-300">
-            <div className="text-4xl text-pink-400 mb-4">
-              <i className="fab fa-java"></i>
-            </div>
-            <h3 className="text-xl font-semibold text-gray-800">Java</h3>
-            <div className="mt-4">
-              <div className="w-full bg-gray-200 rounded-full h-2.5">
-                <div className="bg-pink-400 h-2.5 rounded-full" style={{ width: '75%' }}></div>
-              </div>
-            </div>
-          </div>
-
-          {/* Skill 8: C */}
-          <div className="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-all duration-300">
-            <div className="text-4xl text-pink-400 mb-4">
-              <i className="fas fa-cogs"></i>
-            </div>
-            <h3 className="text-xl font-semibold text-gray-800">C</h3>
-            <div className="mt-4">
-              <div className="w-full bg-gray-200 rounded-full h-2.5">
-                <div className="bg-pink-400 h-2.5 rounded-full" style={{ width: '75%' }}></div>
-              </div>
-            </div>
-          </div>
-
-          {/* Skill 9: C++ */}
-          <div className="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-all duration-300">
-            <div className="text-4xl text-pink-400 mb-4">
-              <i className="fas fa-cogs"></i>
-            </div>
-            <h3 className="text-xl font-semibold text-gray-800">C++</h3>
-            <div className="mt-4">
-              <div className="w-full bg-gray-200 rounded-full h-2.5">
-                <div className="bg-pink-400 h-2.5 rounded-full" style={{ width: '75%' }}></div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
