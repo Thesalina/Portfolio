@@ -42,7 +42,7 @@ const Contact = () => {
 
   return (
     
-    <section id="contact" className="relative min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white py-16">
+    <section id="contact" className="relative min-h-screen bg-white text-gray-900 py-16">
       {/* Background Decorations */}
       <div className="absolute top-10 left-10 w-48 h-48 bg-pink-400 rounded-full blur-3xl opacity-40"></div>
       <div className="absolute bottom-10 right-10 w-32 h-32 bg-pink-400 rounded-full blur-3xl opacity-40"></div>
@@ -67,16 +67,16 @@ const Contact = () => {
             transition={{ duration: 1 }}
           >
             <h3 className="text-2xl font-semibold text-pink-400 mb-4">Contact Info</h3>
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-4">
+            <p className="text-lg text-gray-600 mb-4">
               Feel free to reach out through any of the following channels:
             </p>
-            <div className="text-lg text-gray-600 dark:text-gray-300 mb-2">
+            <div className="text-lg text-gray-600 mb-2">
               📧 <span>Email: <a href="mailto:example@example.com" className="text-pink-500">gotamesalina6@gmail.com</a></span>
             </div>
-            <div className="text-lg text-gray-600 dark:text-gray-300 mb-2">
+            <div className="text-lg text-gray-600 mb-2">
               📞 <span>Phone: +977 <a href="tel:+1234567890" className="text-pink-500">9809878769</a></span>
             </div>
-            <div className="text-lg text-gray-600 dark:text-gray-300">
+            <div className="text-lg text-gray-600">
               📍 <span>Location: Ghorahi Dang Nepal</span>
             </div>
           </motion.div>
@@ -88,7 +88,7 @@ const Contact = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
           >
-            <form onSubmit={handleSubmit} className="bg-gray-100 dark:bg-gray-900 p-8 rounded-lg shadow-lg">
+            <form onSubmit={handleSubmit} className="bg-gray-100 p-8 rounded-lg shadow-lg">
               <div className="mb-6">
                 <label htmlFor="name" className="block text-lg font-medium text-pink-400 mb-2">
                   Name
@@ -99,7 +99,7 @@ const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full p-3 border text-gray-900 dark:text-white border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400"
+                  className="w-full p-3 border text-gray-900 border-gray-300 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400"
                   placeholder="Your Name"
                   required
                 />
@@ -115,7 +115,7 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full p-3 border text-gray-900 dark:text-white border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400"
+                  className="w-full p-3 border text-gray-900 border-gray-300 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400"
                   placeholder="Your Email"
                   required
                 />
@@ -130,7 +130,7 @@ const Contact = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full p-3 border text-gray-900 dark:text-white border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400"
+                  className="w-full p-3 border text-gray-900 border-gray-300 bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400"
                   placeholder="Your Message"
                   rows="6"
                   required

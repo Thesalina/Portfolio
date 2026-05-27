@@ -7,6 +7,6 @@ html {
 }
 
 body {
-  @apply bg-white text-gray-900 dark:bg-black dark:text-white transition-colors duration-300;
+  @apply bg-white text-gray-900 transition-colors duration-300;
 }
   

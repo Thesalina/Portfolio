@@ -32,7 +32,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="py-16 bg-gray-50 dark:bg-black text-pink-400 relative">
+    <section id="services" className="py-16 bg-gray-50 text-pink-400 relative">
       {/* Animated Background Effects */}
       <motion.div
         className="absolute top-10 left-10 w-32 h-32 bg-pink-400 rounded-full blur-3xl opacity-30"
@@ -56,7 +56,7 @@ const Services = () => {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg transform hover:scale-105 hover:shadow-xl transition-all duration-300"
+              className="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 hover:shadow-xl transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
@@ -67,7 +67,7 @@ const Services = () => {
               <h3 className="text-2xl font-semibold text-pink-400 mb-4">
                 {service.title}
               </h3>
-              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              <p className="text-lg text-gray-700 leading-relaxed">
                 {service.description}
               </p>
             </motion.div>

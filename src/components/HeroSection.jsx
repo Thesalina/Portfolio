@@ -3,9 +3,9 @@ import resume from "../assets/Salina_Bishwokarma_CV.pdf";
 
 const HeroSection = () => {
   return (
-    <section className="bg-gradient-to-br from-pink-50 to-white dark:from-black dark:to-black text-gray-900 dark:text-white relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="bg-gradient-to-br from-pink-50 to-white text-gray-900 relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-pink-100/30 dark:from-black to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-pink-100/30 to-transparent"></div>
 
       {/* Content */}
       <div className="container mx-auto px-6 relative z-10 text-center">
@@ -21,7 +21,7 @@ const HeroSection = () => {
         </motion.h1>
 
         <motion.p
-          className="mt-4 text-lg md:text-xl text-gray-600 dark:text-gray-300"
+          className="mt-4 text-lg md:text-xl text-gray-600"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
