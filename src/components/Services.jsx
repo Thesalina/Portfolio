@@ -1,7 +1,6 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { motion } from "framer-motion";
 
-// Move services data outside of the component to avoid re-defining it every render
 const services = [
   {
     icon: "fas fa-laptop-code",
@@ -32,42 +31,35 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="py-16 bg-gray-50 text-pink-400 relative">
-      {/* Animated Background Effects */}
-      <motion.div
-        className="absolute top-10 left-10 w-32 h-32 bg-pink-400 rounded-full blur-3xl opacity-30"
-        animate={{ scale: [1, 1.2, 1] }}
-        transition={{ duration: 3, repeat: Infinity }}
-      ></motion.div>
-      <motion.div
-        className="absolute bottom-10 right-10 w-32 h-32 bg-pink-400 rounded-full blur-3xl opacity-30"
-        animate={{ scale: [1, 1.2, 1] }}
-        transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-      ></motion.div>
+    <section id="services" className="py-24 bg-chic-light text-stone-900">
+      <div className="container mx-auto px-6 lg:px-12">
+        <motion.div
+          className="mb-16 flex flex-col items-center"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-stone-900">
+            What I Do.
+          </h2>
+        </motion.div>
 
-      <div className="container mx-auto px-6 md:px-12">
-        {/* Heading */}
-        <h2 className="text-4xl font-extrabold text-center text-pink-400 mb-12">
-          What I Do
-        </h2>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Service Items */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-white p-8 rounded-lg shadow-lg transform hover:scale-105 hover:shadow-xl transition-all duration-300"
+              className="group bg-white p-10 border border-stone-200 hover:border-stone-400 transition-all duration-300 flex flex-col items-start"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="text-4xl text-pink-400 mb-4">
+              <div className="text-2xl text-stone-800 mb-6 group-hover:text-stone-500 transition-colors duration-300">
                 <i className={service.icon} aria-hidden="true"></i>
               </div>
-              <h3 className="text-2xl font-semibold text-pink-400 mb-4">
+              <h3 className="text-xl font-semibold text-stone-900 mb-4 tracking-wide">
                 {service.title}
               </h3>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-stone-600 font-light leading-relaxed">
                 {service.description}
               </p>
             </motion.div>

@@ -1,74 +1,100 @@
-import { motion } from "framer-motion";
-import myPhoto from "../assets/photo/me.jpeg";
+import salinaPhoto from "../assets/photo/me.jpeg";
 
 const About = () => {
   return (
     <section
       id="about"
-      className="relative h-screen bg-white text-gray-900 py-16 flex items-center justify-center"
+      className="scroll-mt-24 bg-chic-alt py-16 transition-colors duration-500 dark:bg-chic-darkAlt sm:py-20"
     >
-      {/* Animated Decorative Background Effect */}
-      <motion.div
-        className="absolute top-10 left-10 w-48 h-48 bg-pink-400 rounded-full blur-3xl opacity-40"
-        animate={{ scale: [1, 1.2, 1] }}
-        transition={{ duration: 3, repeat: Infinity }}
-      ></motion.div>
-      <motion.div
-        className="absolute bottom-10 right-10 w-32 h-32 bg-pink-400 rounded-full blur-3xl opacity-40"
-        animate={{ scale: [1, 1.2, 1] }}
-        transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-      ></motion.div>
-
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
+      <div className="container mx-auto max-w-5xl px-4 sm:px-6 xl:px-0">
         {/* Heading */}
-        <motion.h2
-          className="text-4xl font-extrabold text-center text-pink-400 mb-8"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          About Me
-        </motion.h2>
+        <div className="space-y-3">
+          <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-chic-text dark:text-chic-darkText sm:text-4xl md:text-5xl">
+            <span className="text-chic-accent">About Me</span>
+          </h2>
 
-        <div className="flex flex-col md:flex-row items-center  justify-center gap-6 md:gap-12">
-          {/* About Text */}
-          <motion.div
-            className="max-w-xl text-center md:text-left bg-white p-6 rounded-lg shadow-lg"
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-          >
-            <motion.p
-              className="text-lg text-gray-700 mb-4"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6 }}
-            >
-              I am from Ghorahi, Dang — a small city in Nepal. I recently graduated with a degree in Computer Engineering from NAST. I first got into coding because I was curious about how websites and apps actually work, and that curiosity turned into a genuine passion. Over time, I have learned to build things from scratch, fix bugs that made me want to pull my hair out, and ship projects that people actually use.
-            </motion.p>
-            <motion.p
-              className="text-lg text-gray-700"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              Last summer, I completed a remote internship at Digital Pathshala, where I worked on Mindfull — a mental health wellness platform. I built the frontend with React and the backend with Express.js, which was my first real taste of building something end-to-end. For my final-year project, I built a Payroll Management System using React and Spring Boot. I am currently looking for an internship where I can learn from real engineers, contribute to something meaningful, and keep growing as a developer.
-            </motion.p>
-          </motion.div>
+          <p className="max-w-2xl text-base leading-7 text-chic-muted dark:text-chic-darkMuted sm:text-lg">
+            I like understanding how things work — and then building them
+            better.
+          </p>
+        </div>
 
-          {/* Profile Image with Animation */}
-          <motion.div
-            className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-pink-500 shadow-lg transform hover:scale-105 transition-transform duration-300"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
-          >
-            <img
-              src={myPhoto}
-              alt="SALINA"
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
+        {/* Main Content */}
+        <div className="mt-10 flex flex-col items-center gap-10 md:flex-row md:items-start md:gap-12">
+          {/* Photo */}
+          <div className="w-52 flex-shrink-0 sm:w-60 md:w-64">
+            <div className="relative">
+              <div className="absolute -inset-2 rounded-2xl border border-chic-accent/40" />
+
+              <img
+                src={salinaPhoto}
+                alt="Salina Bishwokarma"
+                className="relative aspect-[4/5] w-full rounded-2xl object-cover shadow-lg"
+              />
+            </div>
+          </div>
+
+          {/* Content */}
+          <div className="flex-1 space-y-5 text-base leading-7 text-chic-muted dark:text-chic-darkMuted sm:text-lg">
+            <p>
+              I'm Salina, a Computer Engineering graduate from Nepal who enjoys
+              turning ideas into useful software. My journey into development
+              started with a curiosity about how websites and applications
+              actually work — and that curiosity gradually became a passion
+              for building them myself.
+            </p>
+
+            <p>
+              I enjoy working across the stack, from designing interfaces and
+              building frontend experiences to developing APIs, application
+              logic, and database systems. Through my projects and hands-on
+              experience, I've worked on digital wellness, payroll management,
+              healthcare, and other practical applications.
+            </p>
+
+            <p>
+              What I enjoy most is taking an idea from an early concept and
+              turning it into something clear, functional, and genuinely
+              useful. I'm always interested in learning better ways to design,
+              engineer, and ship software.
+            </p>
+
+            <p>
+              I'm currently looking for opportunities where I can contribute to
+              meaningful products, learn from experienced engineers, and
+              continue growing as a software developer.
+            </p>
+
+            {/* Quick Facts */}
+            <div className="grid grid-cols-1 gap-5 border-t border-chic-accent/20 pt-6 sm:grid-cols-3">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.15em] text-chic-accent">
+                  Background
+                </p>
+                <p className="mt-1 text-sm font-medium text-chic-text dark:text-chic-darkText">
+                  Computer Engineering
+                </p>
+              </div>
+
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.15em] text-chic-accent">
+                  Focus
+                </p>
+                <p className="mt-1 text-sm font-medium text-chic-text dark:text-chic-darkText">
+                  Full-Stack Development
+                </p>
+              </div>
+
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.15em] text-chic-accent">
+                  Based in
+                </p>
+                <p className="mt-1 text-sm font-medium text-chic-text dark:text-chic-darkText">
+                  Nepal
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
