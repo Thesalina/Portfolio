@@ -1,23 +1,40 @@
 # Portfolio — Salina Bishwokarma
 
-Personal portfolio website built with React, Tailwind CSS, and Vite. Features dark/light mode, a contact form with email backend, and project showcase.
+A clean, minimal portfolio website with a chic aesthetic and pink accent theme. Built with React, Tailwind CSS, and Vite.
 
-## Tech Stack
+## ✨ Features
 
-- **Frontend:** React 18, Vite 5, Tailwind CSS 3, Framer Motion
-- **Backend:** Express.js, Nodemailer
-- **Deployment:** Vercel
+- **Chic Design** — Warm off-white & soft black palette with pink-400 accent
+- **Dark / Light Mode** — Toggle between themes with smooth transitions
+- **Responsive** — Mobile-first layout that looks great on all devices
+- **Smooth Navigation** — Hash-free URLs with smooth scroll between sections
+- **Animated Sections** — Subtle entrance animations with Framer Motion
+- **Downloadable Resume** — One-click CV download from the hero section
+- **Project Showcase** — Cards with live demo & source code links
+- **SEO Ready** — Proper meta tags, semantic HTML, and custom favicon
 
-## Features
+## 🛠 Tech Stack
 
-- Dark/light mode toggle (defaults to light)
-- Responsive design (mobile + desktop)
-- Animated sections with Framer Motion
-- Contact form with email integration
-- Downloadable resume
-- Project showcase with live demo links
+| Layer      | Technology                          |
+|------------|-------------------------------------|
+| Framework  | React 18, Vite 5                    |
+| Styling    | Tailwind CSS 3 (custom `chic` theme)|
+| Animation  | Framer Motion                       |
+| Icons      | React Icons (FA, Feather)           |
+| Backend    | Express.js, Nodemailer              |
+| Deployment | Vercel                              |
 
-## Getting Started
+## 📁 Sections
+
+- **Hero** — Name, title, and CTA with a soft pink glowing orb
+- **About** — Photo, bio, and quick-facts grid
+- **Experience** — Vertical timeline of roles
+- **Portfolio** — Project cards with hover effects
+- **Skills** — Technical skill set
+- **Contact** — Email, phone, and location
+- **Footer** — Social links, resume, and tagline
+
+## 🚀 Getting Started
 
 ```bash
 npm install
@@ -58,18 +75,33 @@ npm run build
 
 Output goes to `dist/`.
 
-## Project Structure
+## 📂 Project Structure
 
 ```
 src/
 ├── assets/          # Images, resume PDF
-├── components/      # React components
-├── context/         # ThemeContext (dark/light mode)
-├── App.jsx          # Main layout
+├── components/
+│   ├── Navbar.jsx       # Fixed nav with smooth scroll
+│   ├── HeroSection.jsx  # Landing section
+│   ├── About.jsx        # Bio & quick facts
+│   ├── Experience.jsx   # Timeline
+│   ├── Portfolio.jsx    # Project cards
+│   ├── Skills.jsx       # Tech stack
+│   ├── Services.jsx     # Services offered
+│   ├── Contact.jsx      # Contact info
+│   └── Footer.jsx       # Social links & tagline
+├── App.jsx          # Main layout & dark mode logic
 ├── main.jsx         # Entry point
-└── index.css        # Tailwind directives
+└── index.css        # Tailwind directives & base styles
+
+public/
+├── favicon.svg      # Custom pink "S" favicon
 
 backend/
 ├── server.js        # Express + Nodemailer
 └── .env             # Email credentials
 ```
+
+## 📄 License
+
+© 2026 Salina Bishwokarma. All rights reserved.
